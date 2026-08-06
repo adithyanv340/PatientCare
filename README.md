@@ -8,7 +8,7 @@ A secure, responsive, and user-friendly patient management platform built with *
 
 ---
 
-### 🚀 Tech Stack
+### Tech Stack
 
 <img src="https://skillicons.dev/icons?i=react,nodejs,express,mongodb,vscode,git" />
 
@@ -20,7 +20,7 @@ Secure Authentication • Patient Management • Search • Protected Routes •
 
 ---
 
-# 📖 About the Project
+# About the Project
 
 Healthcare organizations require a secure and efficient way to manage patient information. **PatientCare** was developed to provide a simple yet modern solution for managing patient records through a clean and intuitive web interface.
 
@@ -30,13 +30,13 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 ---
 
-# 📸 Application Screenshots
+# Application Screenshots
 
 <table>
 <tr>
 <td align="center">
 
-### 🔐 Login Page
+### Login Page
 
 <img src="documents/images/login.png" width="100%">
 
@@ -44,7 +44,7 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 <td align="center">
 
-### 📝 Register Page
+### Register Page
 
 <img src="documents/images/register.png" width="100%">
 
@@ -54,7 +54,7 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 <tr>
 <td align="center">
 
-### 📊 Dashboard
+### Dashboard
 
 <img src="documents/images/dashboard.png" width="100%">
 
@@ -62,7 +62,7 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 <td align="center">
 
-### 🔍 Patient Search
+### Patient Search
 
 <img src="documents/images/search.png" width="100%">
 
@@ -72,9 +72,9 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 ---
 
-# ✨ Key Features
+# Key Features
 
-### 🔐 Secure Authentication
+### Secure Authentication
 
 - User Registration & Login
 - Passwords securely hashed using **bcrypt**
@@ -83,7 +83,7 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 ---
 
-### 👥 Patient Management
+### Patient Management
 
 - Add new patients
 - View all patient records
@@ -92,7 +92,7 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 ---
 
-### 🔍 Smart Search
+### Smart Search
 
 Quickly search patient records using:
 
@@ -103,7 +103,7 @@ Results are filtered instantly, making it easy to locate patient information.
 
 ---
 
-### 🎨 Modern User Interface
+### Modern User Interface
 
 - Responsive design
 - Professional Login & Register pages
@@ -115,7 +115,7 @@ Results are filtered instantly, making it easy to locate patient information.
 
 ---
 
-# 🛠 Technology Stack
+# Technology Stack
 
 ## Frontend
 
@@ -149,7 +149,7 @@ Results are filtered instantly, making it easy to locate patient information.
 
 ---
 
-# 🏗 System Architecture
+# System Architecture
 
 ```text
                 User
@@ -170,7 +170,7 @@ Results are filtered instantly, making it easy to locate patient information.
 
 ---
 
-# 🚀 Installation
+# Installation
 
 Clone the repository
 
@@ -210,13 +210,17 @@ http://localhost:5173
 
 ---
 
-# 👨‍💻 Author
+## Author
 
 **Adithyan V**
 
-B.Tech in Artificial Intelligence & Data Science
+B.Tech in Artificial Intelligence & Data Science  
+Muthoot Institute of Technology & Science
 
-- GitHub: https://github.com/adithyanv340
-- LinkedIn: https://www.linkedin.com/in/adithyanv340/
+**GitHub**  
+https://github.com/adithyanv340
+
+**LinkedIn**  
+https://www.linkedin.com/in/adithyanv340/
 
 ---
