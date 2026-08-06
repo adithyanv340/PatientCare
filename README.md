@@ -1,60 +1,37 @@
-# PatientCare
+<div align="center">
 
-PatientCare is a full-stack patient management application that allows authenticated users to securely create, view, search and delete patient records.
+# 🏥 PatientCare
 
-## Features
+### Modern Full-Stack Patient Management System
 
-- User registration and login
-- Password hashing using bcrypt
-- JWT-based authentication
-- Protected patient routes
-- Add new patients
-- View patients associated with the logged-in user
-- Search patients by name or bed ID
-- Delete selected patients
-- Responsive login, registration and dashboard interfaces
-- Inline form validation
-- Custom logout and delete confirmation modals
+A secure and responsive patient management platform built using **React, Node.js, Express.js, and MongoDB Atlas**.
 
-## Tech Stack
+---
 
-### Frontend
+**React • Node.js • Express.js • MongoDB Atlas • JWT Authentication**
 
-- React.js
-- Vite
-- React Router
-- Axios
-- React Icons
-- CSS
+</div>
 
-### Backend
+---
 
-- Node.js
-- Express.js
-- MongoDB Atlas
-- Mongoose
-- JSON Web Token
-- bcryptjs
+## 📖 About the Project
 
-## Project Structure
+PatientCare is a modern full-stack web application developed to simplify patient record management in a secure and user-friendly environment.
 
-```text
-PatientCare/
-├── backend/
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   └── server.js
-│
-├── frontend/
-│   ├── public/
-│   └── src/
-│       ├── assets/
-│       ├── pages/
-│       ├── services/
-│       ├── App.jsx
-│       └── index.css
-│
-└── README.md
+The application allows authenticated users to:
+
+- Register and log in securely
+- Add and manage patient records
+- Search patients instantly by name or bed ID
+- Delete patient records using a confirmation modal
+- Access only their own patient data through protected API routes
+
+The project follows a modern client-server architecture, using **React** for the frontend, **Express.js** for the backend, **MongoDB Atlas** as the cloud database, and **JWT Authentication** for security.
+
+# 📸 Application Preview
+
+<p align="center">
+  <img src="docs/images/dashboard.png" width="100%">
+</p>
+
+---
