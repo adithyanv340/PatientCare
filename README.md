@@ -210,18 +210,6 @@ http://localhost:5173
 
 ---
 
-# 🔮 Future Improvements
-
-- ✏️ Edit Patient Details
-- 📅 Appointment Scheduling
-- 🏥 Patient Medical History
-- 👨‍⚕️ Doctor Management
-- 🌙 Dark Mode
-- 📊 Dashboard Analytics
-- 📱 Mobile Responsive Improvements
-
----
-
 # 👨‍💻 Author
 
 **Adithyan V**
