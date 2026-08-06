@@ -30,36 +30,205 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 ---
 
-# 📸 Application Preview
+# 📸 Application Screenshots
 
-## 🔐 Login Page
+<table>
+<tr>
+<td align="center">
 
-<p align="center">
-    <img src="documents/images/login.png" width="90%">
-</p>
+### 🔐 Login Page
+
+<img src="documents/images/login.png" width="100%">
+
+</td>
+
+<td align="center">
+
+### 📝 Register Page
+
+<img src="documents/images/register.png" width="100%">
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### 📊 Dashboard
+
+<img src="documents/images/dashboard.png" width="100%">
+
+</td>
+
+<td align="center">
+
+### 🔍 Patient Search
+
+<img src="documents/images/search.png" width="100%">
+
+</td>
+</tr>
+</table>
 
 ---
 
-## 📝 Register Page
+# ✨ Key Features
 
-<p align="center">
-    <img src="documents/images/register.png" width="90%">
-</p>
+### 🔐 Secure Authentication
 
----
-
-## 📊 Dashboard
-
-<p align="center">
-    <img src="documents/images/dashboard.png" width="90%">
-</p>
+- User Registration & Login
+- Passwords securely hashed using **bcrypt**
+- JWT-based authentication
+- Protected backend API routes
 
 ---
 
-## 🔍 Patient Search
+### 👥 Patient Management
 
-<p align="center">
-    <img src="documents/images/search.png" width="90%">
-</p>
+- Add new patients
+- View all patient records
+- Delete selected patients safely
+- Confirmation modal before deletion
+
+---
+
+### 🔍 Smart Search
+
+Quickly search patient records using:
+
+- Patient Name
+- Bed ID
+
+Results are filtered instantly, making it easy to locate patient information.
+
+---
+
+### 🎨 Modern User Interface
+
+- Responsive design
+- Professional Login & Register pages
+- Beautiful Dashboard
+- Inline form validation
+- Show / Hide Password
+- Custom Logout Confirmation
+- Custom Delete Confirmation
+
+---
+
+# 🛠 Technology Stack
+
+## Frontend
+
+- React.js
+- Vite
+- React Router DOM
+- Axios
+- React Icons
+- CSS3
+
+---
+
+## Backend
+
+- Node.js
+- Express.js
+
+---
+
+## Database
+
+- MongoDB Atlas
+- Mongoose
+
+---
+
+## Authentication & Security
+
+- JSON Web Token (JWT)
+- bcryptjs
+
+---
+
+# 🏗 System Architecture
+
+```text
+                User
+                  │
+                  ▼
+        React Frontend (Vite)
+                  │
+             Axios API Calls
+                  │
+                  ▼
+        Express.js REST API
+                  │
+      JWT Authentication Layer
+                  │
+                  ▼
+           MongoDB Atlas
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/adithyanv340/PatientCare.git
+```
+
+Move into the project
+
+```bash
+cd PatientCare
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### Frontend
+
+Open another terminal.
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The application will start at:
+
+```text
+http://localhost:5173
+```
+
+---
+
+# 🔮 Future Improvements
+
+- ✏️ Edit Patient Details
+- 📅 Appointment Scheduling
+- 🏥 Patient Medical History
+- 👨‍⚕️ Doctor Management
+- 🌙 Dark Mode
+- 📊 Dashboard Analytics
+- 📱 Mobile Responsive Improvements
+
+---
+
+# 👨‍💻 Author
+
+**Adithyan V**
+
+B.Tech in Artificial Intelligence & Data Science
+
+- GitHub: https://github.com/adithyanv340
+- LinkedIn: https://www.linkedin.com/in/adithyanv340/
 
 ---
