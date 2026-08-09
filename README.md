@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏥 PatientCare
+# PatientCare
 
 ### Modern Full-Stack Patient Management System
 
