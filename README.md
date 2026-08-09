@@ -30,6 +30,16 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 ---
 
+## Live Demo
+
+Live Application: https://patient-care-beta-livid.vercel.app
+
+Backend API: https://patientcare-backend-ojcg.onrender.com
+
+> Note: The backend is hosted on Render's free tier, so the first request may take a short time if the service has been inactive.
+
+---
+
 # Application Screenshots
 
 <table>
