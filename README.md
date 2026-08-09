@@ -24,19 +24,26 @@ Secure Authentication • Patient Management • Search • Protected Routes •
 
 Healthcare organizations require a secure and efficient way to manage patient information. **PatientCare** was developed to provide a simple yet modern solution for managing patient records through a clean and intuitive web interface.
 
-The application enables authenticated users to securely register, log in, create patient records, search patients by name or bed ID, and delete patient records with confirmation dialogs. Access to patient records is protected using **JWT authentication**, ensuring users can access only the patient records associated with their own account
+The application enables authenticated users to securely register, log in, create patient records, search patients by name or bed ID, and delete patient records with confirmation dialogs. Access to patient records is protected using **JWT authentication**, ensuring users can access only the patient records associated with their own account.
 
 This project demonstrates the implementation of a complete **MERN-style full-stack application**, focusing on authentication, REST APIs, database integration, and responsive frontend development.
 
 ---
 
-## Live Demo
+# Live Demo
 
-Live Application: https://patient-care-beta-livid.vercel.app
+<div align="center">
 
-Backend API: https://patientcare-backend-ojcg.onrender.com
+### [Open PatientCare Live Application](https://patient-care-beta-livid.vercel.app)
 
-> Note: The backend is hosted on Render's free tier, so the first request may take a short time if the service has been inactive.
+**Frontend:** Vercel &nbsp; | &nbsp; **Backend:** Render &nbsp; | &nbsp; **Database:** MongoDB Atlas
+
+</div>
+
+**Backend API:**  
+https://patientcare-backend-ojcg.onrender.com
+
+> **Demo Note:** The backend is hosted on Render's free tier. If the service has been inactive, the first request may take a short time while the server starts.
 
 ---
 
