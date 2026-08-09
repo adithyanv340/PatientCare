@@ -1,3 +1,4 @@
+// Vite configuration for the PatientCare frontend
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 

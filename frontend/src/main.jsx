@@ -1,3 +1,4 @@
+// Entry point for the PatientCare React application
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";

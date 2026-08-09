@@ -1,3 +1,4 @@
+// PatientCare registration page - handles new user account creation
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUserDoctor } from "react-icons/fa6";

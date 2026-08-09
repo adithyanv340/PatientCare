@@ -1,3 +1,4 @@
+// PatientCare dashboard - manages patient records, search and patient actions
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUserDoctor } from "react-icons/fa6";
