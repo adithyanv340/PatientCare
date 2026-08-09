@@ -21,3 +21,5 @@ npm-debug.log*
 
 # macOS
 .DS_Store
+
+# PatientCare ignored files and environment configuration
