@@ -198,12 +198,14 @@ cd PatientCare
 
 ### 2. Backend Setup
 
+Navigate to the backend directory and install the dependencies:
+
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file inside the `backend` directory:
+Create a `.env` file inside the `backend` directory and add the following environment variables:
 
 ```env
 PORT=5001
@@ -211,7 +213,7 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
 ```
 
-Start the backend:
+Start the backend development server:
 
 ```bash
 npm run dev
@@ -225,11 +227,16 @@ http://localhost:5001
 
 ### 3. Frontend Setup
 
-Open another terminal:
+Open a new terminal, navigate to the frontend directory, and install the dependencies:
 
 ```bash
 cd frontend
 npm install
+```
+
+Start the frontend development server:
+
+```bash
 npm run dev
 ```
 
@@ -239,8 +246,7 @@ The frontend will run locally at:
 http://localhost:5173
 ```
 
-> The deployed frontend is configured to communicate with the deployed backend API. For local development using the local backend, update the API base URL in `frontend/src/services/api.js` to `http://localhost:5001/api`.
-
+> **Note:** The deployed frontend is configured to communicate with the deployed backend API. To use the local backend during development, update the API base URL in `frontend/src/services/api.js` to `http://localhost:5001/api`.
 ---
 
 ## Author
