@@ -166,20 +166,23 @@ Results are filtered instantly, making it easy to locate patient information.
 # System Architecture
 
 ```text
-                User
-                  │
-                  ▼
-        React Frontend (Vite)
-                  │
-             Axios API Calls
-                  │
-                  ▼
-        Express.js REST API
-                  │
-      JWT Authentication Layer
-                  │
-                  ▼
-           MongoDB Atlas
+              User
+                │
+                ▼
+      React Frontend (Vite)
+                │
+           Axios API Calls
+                │
+                ▼
+       Express.js REST API
+                │
+        JWT Auth Middleware
+                │
+                ▼
+            Mongoose
+                │
+                ▼
+         MongoDB Atlas
 ```
 
 ---
