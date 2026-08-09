@@ -32,13 +32,10 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 # Live Demo
 
-<div align="center">
+### PatientCare is deployed and available online
 
-### [Open PatientCare Live Application](https://patient-care-beta-livid.vercel.app)
-
-**Frontend:** Vercel &nbsp; | &nbsp; **Backend:** Render &nbsp; | &nbsp; **Database:** MongoDB Atlas
-
-</div>
+**Live Application:**  
+https://patient-care-beta-livid.vercel.app
 
 **Backend API:**  
 https://patientcare-backend-ojcg.onrender.com
