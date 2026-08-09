@@ -20,7 +20,7 @@ app.use("/api/patients", patientRoutes);
 
 // Test Route
 app.get("/", (req, res) => {
-    res.send("Patient Management System Backend is Running 🚀");
+    res.send("Patient Management System Backend is Running");
 });
 
 // Port
