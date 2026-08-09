@@ -24,7 +24,7 @@ Secure Authentication • Patient Management • Search • Protected Routes •
 
 Healthcare organizations require a secure and efficient way to manage patient information. **PatientCare** was developed to provide a simple yet modern solution for managing patient records through a clean and intuitive web interface.
 
-The application enables authenticated users to securely register, log in, create patient records, search patients by name or bed ID, and delete patient records with confirmation dialogs. Every patient record is protected using **JWT Authentication**, ensuring users can access only their own data.
+The application enables authenticated users to securely register, log in, create patient records, search patients by name or bed ID, and delete patient records with confirmation dialogs. Access to patient records is protected using **JWT authentication**, ensuring users can access only the patient records associated with their own account
 
 This project demonstrates the implementation of a complete **MERN-style full-stack application**, focusing on authentication, REST APIs, database integration, and responsive frontend development.
 
@@ -117,7 +117,7 @@ Results are filtered instantly, making it easy to locate patient information.
 
 - Responsive design
 - Professional Login & Register pages
-- Beautiful Dashboard
+- Clean and intuitive dashboard
 - Inline form validation
 - Show / Hide Password
 - Custom Logout Confirmation
@@ -182,29 +182,43 @@ Results are filtered instantly, making it easy to locate patient information.
 
 # Installation
 
-Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/adithyanv340/PatientCare.git
-```
-
-Move into the project
-
-```bash
 cd PatientCare
 ```
 
-### Backend
+### 2. Backend Setup
 
 ```bash
 cd backend
 npm install
+```
+
+Create a `.env` file inside the `backend` directory:
+
+```env
+PORT=5001
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+Start the backend:
+
+```bash
 npm run dev
 ```
 
-### Frontend
+The backend will run locally at:
 
-Open another terminal.
+```text
+http://localhost:5001
+```
+
+### 3. Frontend Setup
+
+Open another terminal:
 
 ```bash
 cd frontend
@@ -212,11 +226,13 @@ npm install
 npm run dev
 ```
 
-The application will start at:
+The frontend will run locally at:
 
 ```text
 http://localhost:5173
 ```
+
+> The deployed frontend is configured to communicate with the deployed backend API. For local development using the local backend, update the API base URL in `frontend/src/services/api.js` to `http://localhost:5001/api`.
 
 ---
 
