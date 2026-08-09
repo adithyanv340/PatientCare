@@ -1,3 +1,4 @@
+// Authentication routes for PatientCare user registration and login
 const express = require("express");
 
 const router = express.Router();

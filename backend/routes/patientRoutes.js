@@ -1,3 +1,4 @@
+// Protected patient management routes for PatientCare
 const express = require("express");
 const router = express.Router();
 

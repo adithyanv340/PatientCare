@@ -1,3 +1,4 @@
+// Main Express server for the PatientCare REST API
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();

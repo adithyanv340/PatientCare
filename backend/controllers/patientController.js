@@ -1,3 +1,4 @@
+// Handles patient creation, retrieval, search and deletion
 const Patient = require("../models/Patient");
 
 const addPatient = async (req, res) => {

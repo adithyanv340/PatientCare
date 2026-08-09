@@ -1,3 +1,4 @@
+// MongoDB connection configuration for PatientCare
 const mongoose = require("mongoose");
 
 const connectDB = async () => {

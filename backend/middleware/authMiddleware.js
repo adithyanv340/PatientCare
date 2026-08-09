@@ -1,3 +1,4 @@
+// JWT authentication middleware for protecting PatientCare routes
 const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 

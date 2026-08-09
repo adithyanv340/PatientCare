@@ -1,3 +1,4 @@
+// Handles PatientCare user registration and authentication
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
