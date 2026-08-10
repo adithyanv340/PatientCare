@@ -1,6 +1,6 @@
 <div align="center">
 
-# PatientCare
+# HospitalX
 
 ### Modern Full-Stack Patient Management System
 
@@ -22,7 +22,7 @@ Secure Authentication • Patient Management • Search • Protected Routes •
 
 # About the Project
 
-Healthcare organizations require a secure and efficient way to manage patient information. **PatientCare** was developed to provide a simple yet modern solution for managing patient records through a clean and intuitive web interface.
+Healthcare organizations require a secure and efficient way to manage patient information. **HospitalX** was developed to provide a simple yet modern solution for managing patient records through a clean and intuitive web interface.
 
 The application enables authenticated users to securely register, log in, create patient records and search patients by name or bed ID. Access to patient records is protected using **JWT authentication**, ensuring users can access only the patient records associated with their own account.
 
@@ -32,7 +32,7 @@ This project demonstrates the implementation of a complete **MERN-style full-sta
 
 # Live Demo
 
-### PatientCare is deployed and available online
+### HospitalX is deployed and available online
 
 **Live Application:**  
 https://patient-care-beta-livid.vercel.app
