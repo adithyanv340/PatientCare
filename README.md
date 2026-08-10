@@ -52,15 +52,15 @@ https://patientcare-backend-ojcg.onrender.com
 
 ### Login Page
 
-<img src="documents/images/login.png" width="100%">
+<img src="documents/images/01-login-final.png" width="100%">
 
 </td>
 
 <td align="center">
 
-### Register Page
+### Sign Up Page
 
-<img src="documents/images/register.png" width="100%">
+<img src="documents/images/02-signup-final.png" width="100%">
 
 </td>
 </tr>
@@ -70,7 +70,7 @@ https://patientcare-backend-ojcg.onrender.com
 
 ### Dashboard
 
-<img src="documents/images/dashboard.png" width="100%">
+<img src="documents/images/03-dashboard-final.png" width="100%">
 
 </td>
 
@@ -78,7 +78,25 @@ https://patientcare-backend-ojcg.onrender.com
 
 ### Patient Search
 
-<img src="documents/images/search.png" width="100%">
+<img src="documents/images/04-search-final.png" width="100%">
+
+</td>
+</tr>
+
+<tr>
+<td align="center">
+
+### Create Patient
+
+<img src="documents/images/05-create-patient-final.png" width="100%">
+
+</td>
+
+<td align="center">
+
+### Logout Confirmation
+
+<img src="documents/images/06-logout-final.png" width="100%">
 
 </td>
 </tr>

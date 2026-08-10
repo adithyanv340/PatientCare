@@ -37,6 +37,13 @@ function Register() {
             setEmailError("Please enter your email");
             hasError = true;
         }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (email.trim() && !emailPattern.test(email.trim())) {
+            setEmailError("Please enter a valid email address");
+            hasError = true;
+        }
         
         if (!password) {
             setPasswordError("Please enter your password");
