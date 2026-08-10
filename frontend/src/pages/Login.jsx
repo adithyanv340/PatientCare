@@ -2,11 +2,9 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
-import backgroundImage from "../assets/login-background2.jpg";
-import { FaUserDoctor } from "react-icons/fa6";
 
 function Login() {
-    const [email, setEmail] = useState("");
+    const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
@@ -26,7 +24,7 @@ function Login() {
 
         let hasError = false;
 
-        if (!email.trim()) {
+        if (!identifier.trim()) {
             setEmailError("Please enter your email");
             hasError = true;
         }
@@ -44,7 +42,7 @@ function Login() {
             setLoading(true);
 
             const response = await API.post("/auth/login", {
-                email: email.trim(),
+                identifier: identifier.trim(),
                 password
             });
 
@@ -66,123 +64,78 @@ function Login() {
     };
 
     return (
-        <main
-            className="auth-page"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
-        >
-            <div className="auth-overlay"></div>
-
-            <nav className="auth-navbar">
-                <div className="brand">
-                    <span className="brand-icon">
-                        <FaUserDoctor />
-                    </span>
-
-                    <span>PatientCare</span>
-                </div>
-
-                <div className="nav-links">
-                    <button type="button">Home</button>
-                    <button type="button">About</button>
-                    <button type="button">Services</button>
-                    <button type="button">Contact</button>
-                </div>
-            </nav>
-
-            <section className="auth-content">
-                <div className="hero-copy">
-                    <p className="eyebrow">SMART HOSPITAL MANAGEMENT</p>
-
-                    <h1>Better patient care starts with better management.</h1>
-
-                    <p>
-                        Securely manage patient records, bed assignments and hospital
-                        information from one simple dashboard.
-                    </p>
-
-                    <div className="feature-list">
-                        <span>✓ Secure authentication</span>
-                        <span>✓ Fast patient search</span>
-                        <span>✓ Easy bed management</span>
-                    </div>
-                </div>
-
-                <form className="auth-card" onSubmit={handleLogin}>
-                    <div className="auth-heading">
-                        <span className="auth-badge">Welcome back</span>
-                        <h2>Login to your account</h2>
-                        <p>Enter your credentials to continue.</p>
-                    </div>
-
+        <main className="reference-auth-page">
+            <div className="reference-auth-wrapper">
+                <h1 className="reference-hospital-title">Hospital X</h1>
+    
+                <form
+                    className="reference-auth-form"
+                    onSubmit={handleLogin}
+                >
+                    <h2>Log In</h2>
+    
                     {error && (
-                        <div className="auth-error">
+                        <div className="reference-auth-error">
                             {error}
                         </div>
                     )}
-
-                    <label htmlFor="email">Email address</label>
+    
+                    <label htmlFor="email">
+                        Username / email
+                    </label>
+    
                     <input
                         id="email"
-                        className={emailError ? "input-error" : ""}
-                        type="email"
-                        placeholder="abc@gmail.com"
-                        value={email}
+                        type="text"
+                        placeholder="mail@website.com"
+                        value={identifier}
                         onChange={(event) => {
-                            setEmail(event.target.value);
+                            setIdentifier(event.target.value);
                             setEmailError("");
                         }}
-                        autoComplete="email"
                     />
-
+    
                     {emailError && (
-                        <p className="field-error">{emailError}</p> 
+                        <p className="reference-field-error">
+                            {emailError}
+                        </p>
                     )}
-
-                    <label htmlFor="password">Password</label>
-
-                    <div className="password-wrapper">
+    
+                    <label htmlFor="password">
+                        Password
+                    </label>
+    
                     <input
                         id="password"
-                        className={passwordError ? "input-error" : ""}
-                        type={showPassword ? "text" : "password"}
-                        placeholder="Enter your password"
+                        type="password"
+                        placeholder="**********"
                         value={password}
                         onChange={(event) => {
                             setPassword(event.target.value);
                             setPasswordError("");
                         }}
-                        autoComplete="current-password"
                     />
-
-                    <button
-                        type="button"
-                        className="password-toggle"
-                        onClick={() => setShowPassword(!showPassword)}
-                    >
-                        {showPassword ? "Hide" : "Show"}
-                        </button>
-                    </div>
-
+    
                     {passwordError && (
-                        <p className="field-error">
+                        <p className="reference-field-error">
                             {passwordError}
                         </p>
                     )}
-
+    
                     <button
-                        className="auth-submit"
                         type="submit"
+                        className="reference-auth-button"
                         disabled={loading}
                     >
-                        {loading ? "Logging in..." : "Login"}
+                        {loading ? "Logging in..." : "Log In"}
                     </button>
-
-                    <p className="auth-switch">
+    
+                    <p className="reference-auth-switch">
                         Don&apos;t have an account?{" "}
-                        <Link to="/register">Create account</Link>
+                        <Link to="/register">Sign Up</Link>
                     </p>
                 </form>
-            </section>
+            </div>
         </main>
     );
 }

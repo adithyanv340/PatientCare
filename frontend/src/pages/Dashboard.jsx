@@ -1,8 +1,6 @@
-// PatientCare dashboard - manages patient records, search and patient actions
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaUserDoctor } from "react-icons/fa6";
-import { FaSearch, FaBed, FaUserPlus } from "react-icons/fa";
+import { FiLogOut, FiSearch } from "react-icons/fi";
 import API from "../services/api";
 
 function Dashboard() {
@@ -18,6 +16,7 @@ function Dashboard() {
     const [selectedPatientId, setSelectedPatientId] = useState("");
     const [showDeleteModal, setShowDeleteModal] = useState(false);
     const [deleting, setDeleting] = useState(false);
+    const [showPatientModal, setShowPatientModal] = useState(false);
 
     const navigate = useNavigate();
 
@@ -102,6 +101,7 @@ function Dashboard() {
             
             setPatientName("");
             setBedID("");
+            setShowPatientModal(false);
 
             await fetchPatients(search);
 
@@ -114,12 +114,6 @@ function Dashboard() {
             setLoading(false);
         }
     };
-
-    {patientError && (
-        <div className="auth-error">
-            {patientError}
-        </div>
-    )}
 
     const handleSearch = async (event) => {
         const value = event.target.value;
@@ -166,292 +160,183 @@ function Dashboard() {
     };
 
     return (
-        <main className="dashboard-page">
-            <nav className="dashboard-navbar">
-                <div className="dashboard-brand">
-                    <span className="dashboard-brand-icon">
-                        <FaUserDoctor />
-                    </span>
-
-                    <span>PatientCare</span>
+        <main className="reference-dashboard">
+            <header className="reference-topbar">
+                <div className="reference-user-name">
+                    {user?.username || "User"}
                 </div>
-
-                <div className="dashboard-user">
-                    <span>
-                        Welcome, {user?.username || "User"}
-                    </span>
-
-                    <button 
-                        type="button"
-                        onClick={() => setShowLogoutModal(true)}
-                    >
-                        Logout
-                    </button>
-                </div>
-            </nav>
-
-            <section className="dashboard-container">
-                <header className="dashboard-header">
-                    <div>
-                        <p className="dashboard-eyebrow">
-                            PATIENT MANAGEMENT
-                        </p>
-
-                        <h1>Dashboard</h1>
-
-                        <p>
-                            Add patients, manage bed assignments and
-                            quickly search hospital records.
-                        </p>
-                    </div>
-
-                    <div className="patient-count">
-                        <span>{patients.length}</span>
-                        <p>Patients Found</p>
-                    </div>
-                </header>
-
-                <section className="dashboard-grid">
-                    <form
-                        className="add-patient-card"
-                        onSubmit={handleAddPatient}
-                    >
-                        <div className="card-heading">
-                            <span className="card-icon">
-                                <FaUserPlus />
-                            </span>
-
-                            <div>
-                                <h2>Add Patient</h2>
-                                <p>Create a new patient record.</p>
-                            </div>
-                        </div>
-
-                        <label htmlFor="patientName">
-                            Patient Name
-                        </label>
-
+    
+                <button
+                    type="button"
+                    className="reference-logout-button"
+                    onClick={() => setShowLogoutModal(true)}
+                >
+                    <FiLogOut/>
+                    <span>Log Out</span>
+                </button>
+            </header>
+    
+            <div className="reference-dashboard-toolbar">
+                <button
+                    type="button"
+                    className="reference-create-button"
+                    onClick={() => setShowPatientModal(true)}
+                >
+                    Create Patient
+                </button>
+    
+                <h1>Dashboard</h1>
+    
+                <div className="reference-search-box">
+                    <div className="reference-search-input">
                         <input
-                            id="patientName"
-                            className={patientNameError ? "input-error" : ""}
                             type="text"
-                            placeholder="Enter patient name"
-                            value={patientName}
-                            onChange={(event) => {
-                                setPatientName(event.target.value)
-                                setPatientNameError("");
-                            }}
+                            placeholder="Patient name / Bed ID"
+                            value={search}
+                            onChange={handleSearch}
                         />
 
-                        {patientNameError && (
-                            <p className="field-error">
-                                {patientNameError}
-                            </p>
-                        )}        
-                        
-
-                        <label htmlFor="bedID">Bed ID</label>
-
-                        <input
-                            id="bedID"
-                            className={bedIDError ? "input-error" : ""}
-                            type="text"
-                            placeholder="Example: B101"
-                            value={bedID}
-                            onChange={(event) => {
-                                setBedID(event.target.value)
-                                setBedIDError("");
-                            }}
-                        />
-                        
-                        {bedIDError && (
-                            <p className="field-error">
-                                {bedIDError}
-                            </p>
-                        )}
-
-                        <button
-                            className="add-patient-button"
-                            type="submit"
-                            disabled={loading}
-                        >
-                            {loading
-                                ? "Adding Patient..."
-                                : "Add Patient"}
-                        </button>
-                    </form>
-
-                    <section className="patients-section">
-                        <div className="patients-toolbar">
-                            <div>
-                                <h2>Patient Records</h2>
-                                <p>
-                                    View patients associated with your account.
-                                </p>
-                            </div>
-
-                            <div className="search-wrapper">
-                                <FaSearch />
-
-                                <input
-                                    type="text"
-                                    placeholder="Search name or bed ID"
-                                    value={search}
-                                    onChange={handleSearch}
-                                />
-                            </div>
-                        </div>
-
-                        <div className="patient-table-wrapper">
-                            {patients.length === 0 ? (
-                                <div className="empty-state">
-                                    <FaBed />
-                                    <h3>No patients found</h3>
-                                    <p>
-                                        Add a patient or try another search.
-                                    </p>
+                        <FiSearch className="reference-search-icon" />
+                    </div>
+                </div>
+            </div>
+    
+            <section className="reference-dashboard-content">
+                {patients.length === 0 ? (
+                    <p className="reference-empty-state">
+                        No patients found
+                    </p>
+                ) : (
+                    <div className="reference-patient-list">
+                        {patients.map((patient) => (
+                            <div
+                                className="reference-patient-card-wrapper"
+                                key={patient._id}
+                            >
+                                <div className="reference-bed-id">
+                                    {patient.bedID}
                                 </div>
-                            ) : (
-                                <table className="patient-table">
-                                    <thead>
-                                        <tr>
-                                            <th>Select</th>
-                                            <th>Patient Name</th>
-                                            <th>Bed ID</th>
-                                            <th>Added On</th>
-                                        </tr>
-                                    </thead>
 
-                                    <tbody>
-                                        {patients.map((patient) => (
-                                            <tr key={patient._id}>
-                                                <td>
-                                                <input
-                                                    type="radio"
-                                                    name="selectedPatient"
-                                                    checked={selectedPatientId === patient._id}
-                                                    onChange={() => setSelectedPatientId(patient._id)}
-                                                    />
-                                                </td>
-
-                                                <td>
-                                                    <div className="patient-name-cell">
-                                                        <span>
-                                                            {patient.patientName
-                                                                .charAt(0)
-                                                                .toUpperCase()}
-                                                        </span>
-
-                                                        {
-                                                            patient.patientName
-                                                        }
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <span className="bed-badge">
-                                                        {patient.bedID}
-                                                    </span>
-                                                </td>
-
-                                                <td>
-                                                    {new Date(
-                                                        patient.createdAt
-                                                    ).toLocaleDateString()}
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            )}
-                        </div>
-                        <div className="delete-selected-wrapper">
-
-                        <button
-                            className="clear-selection-button"
-                            onClick={() => setSelectedPatientId("")}
-                            disabled={!selectedPatientId}
-                        >
-                            Clear Selection
-                        </button>
-
-                        <button
-                            className="delete-selected-button"
-                            disabled={!selectedPatientId}
-                            onClick={() => setShowDeleteModal(true)}
-                        >
-                            Delete Selected
-                        </button>
+                                <div className="reference-patient-card">
+                                    {patient.patientName}
+                                </div>
+                            </div>
+                        ))}
                     </div>
+                )}
 
-                    </section>
-                </section>
             </section>
-
+    
+            {showPatientModal && (
+                <div className="reference-modal-overlay">
+                    <div className="reference-patient-modal">
+                        <h2>Create Patient</h2>
+    
+                        {patientError && (
+                            <div className="reference-auth-error">
+                                {patientError}
+                            </div>
+                        )}
+    
+                        <form onSubmit={handleAddPatient}>
+                            <label htmlFor="patientName">
+                                Patient Name
+                            </label>
+    
+                            <input
+                                id="patientName"
+                                type="text"
+                                value={patientName}
+                                onChange={(event) => {
+                                    setPatientName(event.target.value);
+                                    setPatientNameError("");
+                                }}
+                            />
+    
+                            {patientNameError && (
+                                <p className="reference-field-error">
+                                    {patientNameError}
+                                </p>
+                            )}
+    
+                            <label htmlFor="bedID">
+                                Bed ID
+                            </label>
+    
+                            <input
+                                id="bedID"
+                                type="text"
+                                value={bedID}
+                                onChange={(event) => {
+                                    setBedID(event.target.value);
+                                    setBedIDError("");
+                                }}
+                            />
+    
+                            {bedIDError && (
+                                <p className="reference-field-error">
+                                    {bedIDError}
+                                </p>
+                            )}
+    
+                            <div className="reference-modal-actions">
+                                <button
+                                    type="submit"
+                                    className="reference-save-button"
+                                    disabled={loading}
+                                >
+                                    {loading ? "Saving..." : "Save"}
+                                </button>
+    
+                                <button
+                                    type="button"
+                                    className="reference-cancel-button"
+                                    onClick={() => {
+                                        setShowPatientModal(false);
+                                        setPatientName("");
+                                        setBedID("");
+                                        setPatientNameError("");
+                                        setBedIDError("");
+                                        setPatientError("");
+                                    }}
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            )}
+    
             {showLogoutModal && (
-                <div className="modal-overlay">
-                    <div className="logout-modal">
-                        <h2>Logout?</h2>
-
+                <div className="reference-modal-overlay">
+                    <div className="reference-confirm-modal">
+                        <h2>Log Out?</h2>
+    
                         <p>
-                            Are you sure you want to logout from PatientCare?
+                            Are you sure you want to log out?
                         </p>
-
-                        <div className="modal-actions">
+    
+                        <div className="reference-modal-actions">
                             <button
                                 type="button"
-                                className="cancel-button"
+                                className="reference-cancel-button"
                                 onClick={() => setShowLogoutModal(false)}
                             >
                                 Cancel
                             </button>
-
+    
                             <button
                                 type="button"
-                                className="confirm-logout-button"
+                                className="reference-delete-button"
                                 onClick={confirmLogout}
                             >
-                                Logout
+                                Log Out
                             </button>
                         </div>
                     </div>
                 </div>
             )}
-
-            {showDeleteModal && (
-                <div className="modal-overlay">
-                    <div className="logout-modal">
-                        <h2>Delete Patient?</h2>
-
-                        <p>
-                            Are you sure you want to delete the selected patient?
-                            This action cannot be undone.
-                        </p>
-
-                        <div className="modal-actions">
-                            <button
-                                type="button"
-                                className="cancel-button"
-                                onClick={() => setShowDeleteModal(false)}
-                                disabled={deleting}
-                            >
-                                Cancel
-                            </button>
-
-                            <button
-                                type="button"
-                                className="confirm-logout-button"
-                                onClick={handleDeletePatient}
-                                disabled={deleting}
-                            >
-                                {deleting ? "Deleting..." : "Delete"}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
-        
-
         </main>
     );
 }
