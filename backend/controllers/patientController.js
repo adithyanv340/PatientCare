@@ -13,10 +13,24 @@ const addPatient = async (req, res) => {
             });
         }
 
+        const normalizedBedID = bedID.trim().toUpperCase();
+
+        // Check if bed ID is already assigned
+        const existingBed = await Patient.findOne({
+            bedID: normalizedBedID,
+            user: req.user._id
+        });
+
+        if (existingBed) {
+            return res.status(400).json({
+                message: "Bed ID is already assigned to another patient"
+            });
+        }
+
         // Create new patient
         const newPatient = await Patient.create({
-            patientName,
-            bedID,
+            patientName: patientName.trim(),
+            bedID: normalizedBedID,
             user: req.user._id
         });
 

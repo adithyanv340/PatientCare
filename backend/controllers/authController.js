@@ -61,18 +61,23 @@ const registerUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
     try {
-        const { email, password } = req.body;
+        const { identifier, password } = req.body;
 
         // Check if all fields are provided
-        if (!email || !password) {
+        if (!identifier || !password) {
             return res.status(400).json({
                 message: "Please fill all fields"
             });
         }
         
         // Check if user exists
-        const user = await User.findOne({ email });
-
+        const user = await User.findOne({
+            $or: [
+                { email: identifier },
+                { username: identifier }
+            ]
+        });
+        
         if (!user) {
             return res.status(400).json({
                 message: "Invalid email or password"
