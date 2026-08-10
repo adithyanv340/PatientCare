@@ -24,7 +24,7 @@ Secure Authentication • Patient Management • Search • Protected Routes •
 
 Healthcare organizations require a secure and efficient way to manage patient information. **PatientCare** was developed to provide a simple yet modern solution for managing patient records through a clean and intuitive web interface.
 
-The application enables authenticated users to securely register, log in, create patient records, search patients by name or bed ID, and delete patient records with confirmation dialogs. Access to patient records is protected using **JWT authentication**, ensuring users can access only the patient records associated with their own account.
+The application enables authenticated users to securely register, log in, create patient records and search patients by name or bed ID. Access to patient records is protected using **JWT authentication**, ensuring users can access only the patient records associated with their own account.
 
 This project demonstrates the implementation of a complete **MERN-style full-stack application**, focusing on authentication, REST APIs, database integration, and responsive frontend development.
 
@@ -109,18 +109,21 @@ https://patientcare-backend-ojcg.onrender.com
 ### Secure Authentication
 
 - User Registration & Login
+- Login using username or email
 - Passwords securely hashed using **bcrypt**
 - JWT-based authentication
 - Protected backend API routes
+- User-specific patient records
 
 ---
 
 ### Patient Management
 
-- Add new patients
-- View all patient records
-- Delete selected patients safely
-- Confirmation modal before deletion
+- Create new patient records
+- View all patient records associated with the logged-in user
+- Patient name and Bed ID validation
+- Duplicate Bed ID prevention
+- Bed IDs normalized for consistent storage
 
 ---
 
@@ -131,19 +134,19 @@ Quickly search patient records using:
 - Patient Name
 - Bed ID
 
-Results are filtered instantly, making it easy to locate patient information.
+Results are filtered dynamically, making it easy to locate patient information.
 
 ---
 
-### Modern User Interface
+### User Interface
 
 - Responsive design
-- Professional Login & Register pages
-- Clean and intuitive dashboard
-- Inline form validation
-- Show / Hide Password
-- Custom Logout Confirmation
-- Custom Delete Confirmation
+- Login and Sign Up pages aligned with the provided reference design
+- Clean patient dashboard
+- Create Patient modal
+- Inline form validation and error messages
+- Email format validation during registration
+- Logout confirmation modal
 
 ---
 
